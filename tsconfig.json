@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./bin",
+        "outDir": "./dist",
         "allowJs": true,
         "strict": true,
         "target": "es2019",
