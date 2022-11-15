@@ -4,14 +4,8 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "mdm": "node dist/index.js",
-    "cron": "node dist/cron.js",
+    "start": "node dist/index.js",
     "start:dev": "NODE_ENV=local-dev ts-node-dev --respawn src/index.ts",
-    "clinic:doctor": "tsc && NODE_ENV=local-dev clinic doctor -- node dist/cron.js",
-    "clinic:flame": "tsc && NODE_ENV=local-dev clinic flame -- node dist/cron.js",
-    "clinic:bubble": "tsc && NODE_ENV=local-dev clinic bubbleprof -- node dist/cron.js",
-    "cron:dev": "NODE_ENV=local-dev ts-node-dev --respawn src/cron.ts",
-    "test": "NODE_ENV=test jest --detectOpenHandles --watch --setupFiles dotenv/config"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
