@@ -9,10 +9,12 @@ import path from "path";
 
 ParseDashboardMiddleware(Server);
 
-https.createServer(process.env.SSL_KEY ? {
+const servOptions = {
     key: fs.readFileSync(path.join(__dirname, process.env.SSL_KEY!)),
     cert: fs.readFileSync(path.join(__dirname, process.env.SSL_CERT!))
-} : {}, Server)
+}
+
+https.createServer(process.env.SSL_KEY ? servOptions : {}, Server)
     .listen(1337, () => {
     console.log('Running on HTTPS');
 });
