@@ -21,7 +21,8 @@ export const ParseDashboardMiddleware = (app: Express) => {
             }
         ],
         useEncryptedPasswords: false,
-        iconsFolder: path.join(__dirname, '../assets/img')
+        iconsFolder: path.join(__dirname, '../assets/img'),
+        trustProxy: 1
     });
 
     app.use('/dashboard', dashboard);
