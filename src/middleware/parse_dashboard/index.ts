@@ -3,7 +3,7 @@ import path from "path";
 
 const ParseDashboard = require('parse-dashboard');
 
-export const ParseDashboardMiddleware = (app: Express) => {
+export const ParseDashboardMiddleware = (app: Express): Express => {
     const dashboard = new ParseDashboard({
         apps: [
             {
@@ -26,4 +26,5 @@ export const ParseDashboardMiddleware = (app: Express) => {
     });
 
     app.use('/dashboard', dashboard);
+    return app;
 }
